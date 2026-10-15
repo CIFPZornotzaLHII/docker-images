@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="490" viewBox="0 0 960 490">
+  <title>La caché de capas: el orden importa</title>
+  <style>
+    .s { font-family: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif; }
+    .m { font-family: Consolas, ui-monospace, Menlo, monospace; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="959" height="489" rx="16" fill="#ffffff" stroke="#e5e7eb"/>
+  <text class="s" x="28" y="44" font-size="22" font-weight="700" fill="#111827">La caché de capas: el orden importa</text>
+  <text class="s" x="28" y="68" font-size="13" fill="#6b7280">Has cambiado una línea de <tspan class="m">app.py</tspan> y vuelves a ejecutar <tspan class="m">docker build</tspan>. ¿Qué se rehace?</text>
+
+  <!-- ===== Panel izquierdo: orden lento ===== -->
+  <rect x="28" y="88" width="440" height="320" rx="12" fill="#f9fafb" stroke="#e5e7eb" stroke-width="2"/>
+  <text class="s" x="48" y="118" font-size="16" font-weight="700" fill="#111827">Orden lento</text>
+  <text class="s" x="448" y="118" text-anchor="end" font-size="16" font-weight="700" fill="#b91c1c">≈ 23 s</text>
+  <text class="s" x="48" y="138" font-size="12.5" fill="#6b7280">copia todo y después instala</text>
+
+  <rect x="48" y="152" width="400" height="32" rx="6" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <rect x="48" y="192" width="400" height="32" rx="6" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <g fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5">
+    <rect x="48" y="232" width="400" height="32" rx="6"/>
+    <rect x="48" y="272" width="400" height="32" rx="6"/>
+    <rect x="48" y="312" width="400" height="32" rx="6"/>
+  </g>
+  <g class="m" font-size="13" fill="#111827">
+    <text x="60" y="173">FROM python:3.14-slim</text>
+    <text x="60" y="213">WORKDIR /app</text>
+    <text x="60" y="253">COPY . .</text>
+    <text x="60" y="293">RUN pip install -r requirements.txt</text>
+    <text x="60" y="333">ENV · EXPOSE · CMD</text>
+  </g>
+  <text class="s" x="128" y="253" font-size="12" fill="#b91c1c">← app.py ha cambiado</text>
+
+  <!-- ===== Panel derecho: orden rápido ===== -->
+  <rect x="492" y="88" width="440" height="320" rx="12" fill="#f9fafb" stroke="#e5e7eb" stroke-width="2"/>
+  <text class="s" x="512" y="118" font-size="16" font-weight="700" fill="#111827">Orden rápido</text>
+  <text class="s" x="912" y="118" text-anchor="end" font-size="16" font-weight="700" fill="#15803d">≈ 2 s</text>
+  <text class="s" x="512" y="138" font-size="12.5" fill="#6b7280">instala primero, copia tu código al final</text>
+
+  <g fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5">
+    <rect x="512" y="152" width="400" height="32" rx="6"/>
+    <rect x="512" y="192" width="400" height="32" rx="6"/>
+    <rect x="512" y="232" width="400" height="32" rx="6"/>
+  </g>
+  <rect x="512" y="272" width="400" height="32" rx="6" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+  <g fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5">
+    <rect x="512" y="312" width="400" height="32" rx="6"/>
+    <rect x="512" y="352" width="400" height="32" rx="6"/>
+  </g>
+  <g class="m" font-size="13" fill="#111827">
+    <text x="524" y="173">FROM python:3.14-slim</text>
+    <text x="524" y="213">WORKDIR /app</text>
+    <text x="524" y="253">COPY requirements.txt .</text>
+    <text x="524" y="293">RUN pip install -r requirements.txt</text>
+    <text x="524" y="333">COPY . .</text>
+    <text x="524" y="373">ENV · EXPOSE · CMD</text>
+  </g>
+  <text class="s" x="592" y="333" font-size="12" fill="#b91c1c">← app.py ha cambiado</text>
+
+  <!-- ===== Etiquetas en caché / se rehace ===== -->
+  <g fill="#e5e7eb">
+    <rect x="344" y="158" width="94" height="20" rx="10"/>
+    <rect x="344" y="198" width="94" height="20" rx="10"/>
+    <rect x="808" y="158" width="94" height="20" rx="10"/>
+    <rect x="808" y="198" width="94" height="20" rx="10"/>
+    <rect x="808" y="238" width="94" height="20" rx="10"/>
+  </g>
+  <rect x="808" y="278" width="94" height="20" rx="10" fill="#16a34a"/>
+  <g fill="#dc2626">
+    <rect x="344" y="238" width="94" height="20" rx="10"/>
+    <rect x="344" y="278" width="94" height="20" rx="10"/>
+    <rect x="344" y="318" width="94" height="20" rx="10"/>
+    <rect x="808" y="318" width="94" height="20" rx="10"/>
+    <rect x="808" y="358" width="94" height="20" rx="10"/>
+  </g>
+  <g class="s" font-size="11.5" font-weight="700" text-anchor="middle">
+    <g fill="#374151">
+      <text x="391" y="172">en caché</text>
+      <text x="391" y="212">en caché</text>
+      <text x="855" y="172">en caché</text>
+      <text x="855" y="212">en caché</text>
+      <text x="855" y="252">en caché</text>
+    </g>
+    <g fill="#ffffff">
+      <text x="855" y="292">en caché</text>
+      <text x="391" y="252">se rehace</text>
+      <text x="391" y="292">se rehace</text>
+      <text x="391" y="332">se rehace</text>
+      <text x="855" y="332">se rehace</text>
+      <text x="855" y="372">se rehace</text>
+    </g>
+  </g>
+
+  <!-- ===== Regla ===== -->
+  <rect x="28" y="422" width="904" height="52" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <g class="s" font-size="13.5" fill="#111827">
+    <text x="46" y="443"><tspan font-weight="700">Regla:</tspan> si una instrucción cambia, se rehacen ella <tspan font-weight="700">y todas las que van detrás</tspan>.</text>
+    <text x="46" y="464">Pon arriba lo que cambia poco (las dependencias) y abajo lo que cambia mucho (tu código).</text>
+  </g>
+</svg>

@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520">
+  <title>docker build: una capa por instrucción</title>
+  <style>
+    .s { font-family: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif; }
+    .m { font-family: Consolas, ui-monospace, Menlo, monospace; }
+  </style>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="959" height="519" rx="16" fill="#ffffff" stroke="#e5e7eb"/>
+  <text class="s" x="28" y="44" font-size="22" font-weight="700" fill="#111827">docker build: una capa por instrucción</text>
+
+  <!-- ===== Comando ===== -->
+  <rect x="28" y="62" width="904" height="40" rx="8" fill="#1f2937"/>
+  <text class="m" x="46" y="88" font-size="15" fill="#ffffff">docker build -t hola-flask:1.0 .</text>
+  <text class="s" x="372" y="88" font-size="12.5" fill="#d1d5db"><tspan class="m" fill="#ffffff" font-weight="700">-t</tspan>  nombre:etiqueta de la imagen</text>
+  <text class="s" x="600" y="88" font-size="12.5" fill="#d1d5db"><tspan class="m" fill="#ffffff" font-weight="700">.</tspan>  la carpeta que se envía a Docker (el contexto)</text>
+
+  <!-- ===== Contexto ===== -->
+  <rect x="28" y="122" width="210" height="340" rx="12" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5"/>
+  <text class="m" x="44" y="150" font-size="14" font-weight="700" fill="#111827">hola-flask/</text>
+  <text class="s" x="44" y="170" font-size="12" fill="#6b7280">el contexto de build</text>
+  <g fill="#e5e7eb" stroke="#9ca3af">
+    <rect x="44" y="196" width="8" height="11" rx="1"/>
+    <rect x="44" y="224" width="8" height="11" rx="1"/>
+    <rect x="44" y="252" width="8" height="11" rx="1"/>
+    <rect x="44" y="280" width="8" height="11" rx="1"/>
+    <rect x="44" y="308" width="8" height="11" rx="1"/>
+  </g>
+  <g class="m" font-size="13" fill="#111827">
+    <text x="60" y="206">Dockerfile</text>
+    <text x="60" y="234">.dockerignore</text>
+    <text x="60" y="262">requirements.txt</text>
+    <text x="60" y="290">app.py</text>
+    <text x="60" y="318" fill="#6b7280">.env</text>
+  </g>
+  <line x1="58" y1="314" x2="94" y2="314" stroke="#dc2626" stroke-width="2"/>
+  <text class="s" x="102" y="318" font-size="12" fill="#b91c1c">← no se envía</text>
+  <g class="s" font-size="12" fill="#6b7280">
+    <text x="44" y="380">Docker recibe esta carpeta,</text>
+    <text x="44" y="398">menos lo que diga</text>
+    <text x="44" y="416"><tspan class="m">.dockerignore</tspan>. Los COPY</text>
+    <text x="44" y="434">copian desde aquí.</text>
+  </g>
+
+  <!-- ===== Cabeceras ===== -->
+  <text class="s" x="290" y="138" font-size="15" font-weight="700" fill="#9a3412">Dockerfile</text>
+  <text class="s" x="680" y="138" font-size="15" font-weight="700" fill="#1e40af">Imagen <tspan class="m" font-size="14">hola-flask:1.0</tspan></text>
+
+  <!-- ===== Instrucciones ===== -->
+  <g fill="#fff7ed" stroke="#fdba74" stroke-width="1.5">
+    <rect x="290" y="150" width="330" height="32" rx="6"/>
+    <rect x="290" y="190" width="330" height="32" rx="6"/>
+    <rect x="290" y="230" width="330" height="32" rx="6"/>
+    <rect x="290" y="270" width="330" height="32" rx="6"/>
+    <rect x="290" y="310" width="330" height="32" rx="6"/>
+    <rect x="290" y="350" width="330" height="32" rx="6"/>
+    <rect x="290" y="390" width="330" height="32" rx="6"/>
+    <rect x="290" y="430" width="330" height="32" rx="6"/>
+  </g>
+  <g class="m" font-size="13" fill="#111827">
+    <text x="302" y="171">FROM python:3.14-slim</text>
+    <text x="302" y="211">WORKDIR /app</text>
+    <text x="302" y="251">COPY requirements.txt .</text>
+    <text x="302" y="291">RUN pip install -r requirements.txt</text>
+    <text x="302" y="331">COPY . .</text>
+    <text x="302" y="371">ENV NOMBRE=mundo</text>
+    <text x="302" y="411">EXPOSE 5000</text>
+    <text x="302" y="451">CMD ["python", "app.py"]</text>
+  </g>
+
+  <!-- ===== Flechas ===== -->
+  <g stroke="#4b5563" stroke-width="1.8" marker-end="url(#flecha)">
+    <line x1="240" y1="290" x2="286" y2="290"/>
+    <line x1="624" y1="166" x2="676" y2="166"/>
+    <line x1="624" y1="206" x2="676" y2="206"/>
+    <line x1="624" y1="246" x2="676" y2="246"/>
+    <line x1="624" y1="286" x2="676" y2="286"/>
+    <line x1="624" y1="326" x2="676" y2="326"/>
+    <line x1="624" y1="366" x2="676" y2="366"/>
+    <line x1="624" y1="406" x2="676" y2="406"/>
+    <line x1="624" y1="446" x2="676" y2="446"/>
+  </g>
+
+  <!-- ===== Capas ===== -->
+  <rect x="680" y="150" width="252" height="32" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <g fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5">
+    <rect x="680" y="190" width="252" height="32" rx="6"/>
+    <rect x="680" y="230" width="252" height="32" rx="6"/>
+    <rect x="680" y="270" width="252" height="32" rx="6"/>
+    <rect x="680" y="310" width="252" height="32" rx="6"/>
+  </g>
+  <g fill="#ffffff" stroke="#93c5fd" stroke-width="1.5" stroke-dasharray="5 3">
+    <rect x="680" y="350" width="252" height="32" rx="6"/>
+    <rect x="680" y="390" width="252" height="32" rx="6"/>
+    <rect x="680" y="430" width="252" height="32" rx="6"/>
+  </g>
+  <g class="s" font-size="13" fill="#1e3a8a">
+    <text x="694" y="171">capas de <tspan class="m">python:3.14-slim</tspan></text>
+    <text x="694" y="211">crea la carpeta /app</text>
+    <text x="694" y="251">+ requirements.txt</text>
+    <text x="694" y="291">+ Flask instalado</text>
+    <text x="694" y="331">+ app.py (tu código)</text>
+    <text x="694" y="371">variable NOMBRE=mundo</text>
+    <text x="694" y="411">puerto 5000 (informativo)</text>
+    <text x="694" y="451">al arrancar: python app.py</text>
+  </g>
+
+  <!-- ===== Leyenda ===== -->
+  <rect x="290" y="484" width="20" height="14" rx="3" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/>
+  <text class="s" x="318" y="496" font-size="12.5" fill="#374151">añade archivos (ocupa espacio)</text>
+  <rect x="520" y="484" width="20" height="14" rx="3" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5" stroke-dasharray="4 2"/>
+  <text class="s" x="548" y="496" font-size="12.5" fill="#374151">solo metadatos (0 B)</text>
+  <text class="s" x="932" y="496" text-anchor="end" font-size="12.5" fill="#6b7280">Compruébalo con <tspan class="m">docker history</tspan></text>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470">
+  <title>Una imagen, muchos contenedores</title>
+  <style>
+    .s { font-family: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif; }
+    .m { font-family: Consolas, ui-monospace, Menlo, monospace; }
+  </style>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="959" height="469" rx="16" fill="#ffffff" stroke="#e5e7eb"/>
+  <text class="s" x="28" y="44" font-size="22" font-weight="700" fill="#111827">Una imagen, muchos contenedores</text>
+
+  <!-- ===== Imagen ===== -->
+  <rect x="40" y="84" width="300" height="300" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text class="s" x="60" y="114" font-size="16" font-weight="700" fill="#1e40af">Imagen <tspan class="m" font-size="15">nginx:alpine</tspan></text>
+  <g transform="translate(306,98)">
+    <path d="M3,8 V5 a5,5 0 0 1 10,0 V8" stroke="#2563eb" stroke-width="2" fill="none"/>
+    <rect x="0" y="8" width="16" height="12" rx="2" fill="#2563eb"/>
+  </g>
+  <text class="s" x="60" y="136" font-size="12.5" fill="#6b7280">solo lectura · se descarga una vez</text>
+  <g stroke="#60a5fa" stroke-width="1.5">
+    <rect x="60" y="154" width="260" height="40" rx="6" fill="#dbeafe"/>
+    <rect x="60" y="202" width="260" height="40" rx="6" fill="#dbeafe"/>
+    <rect x="60" y="250" width="260" height="40" rx="6" fill="#dbeafe"/>
+    <rect x="60" y="298" width="260" height="40" rx="6" fill="#bfdbfe"/>
+  </g>
+  <g class="s" font-size="13.5" fill="#1e3a8a">
+    <text x="76" y="179">index.html de bienvenida</text>
+    <text x="76" y="227">configuración de nginx</text>
+    <text x="76" y="275">programa nginx</text>
+    <text x="76" y="323">alpine (sistema base)</text>
+  </g>
+  <text class="s" x="60" y="366" font-size="12.5" fill="#6b7280">capas apiladas: la base, abajo</text>
+
+  <!-- ===== Flechas docker run ===== -->
+  <g stroke="#4b5563" stroke-width="2" fill="none" marker-end="url(#flecha)">
+    <path d="M342,234 C470,234 470,130 598,130"/>
+    <path d="M342,234 H598"/>
+    <path d="M342,234 C470,234 470,338 598,338"/>
+  </g>
+  <text class="m" x="530" y="226" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">docker run</text>
+
+  <!-- ===== Contenedor web1 ===== -->
+  <rect x="600" y="84" width="320" height="92" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text class="s" x="620" y="112" font-size="16" font-weight="700" fill="#166534">web1</text>
+  <text class="m" x="672" y="112" font-size="13" fill="#4b5563">localhost:8081</text>
+  <rect x="620" y="124" width="280" height="22" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text class="s" x="630" y="140" font-size="12.5" fill="#166534">capa de escritura: vacía</text>
+  <rect x="620" y="150" width="280" height="16" rx="4" fill="#dbeafe" stroke="#93c5fd"/>
+  <text class="s" x="630" y="162" font-size="11" fill="#1e40af">capas de nginx:alpine (compartidas)</text>
+
+  <!-- ===== Contenedor web2 (modificado) ===== -->
+  <rect x="600" y="188" width="320" height="92" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text class="s" x="620" y="216" font-size="16" font-weight="700" fill="#166534">web2</text>
+  <text class="m" x="672" y="216" font-size="13" fill="#4b5563">localhost:8082</text>
+  <rect x="620" y="228" width="280" height="22" rx="5" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text class="s" x="630" y="244" font-size="12.5" font-weight="700" fill="#166534">capa de escritura: index.html modificado</text>
+  <rect x="620" y="254" width="280" height="16" rx="4" fill="#dbeafe" stroke="#93c5fd"/>
+  <text class="s" x="630" y="266" font-size="11" fill="#1e40af">capas de nginx:alpine (compartidas)</text>
+
+  <!-- ===== Contenedor web3 ===== -->
+  <rect x="600" y="292" width="320" height="92" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text class="s" x="620" y="320" font-size="16" font-weight="700" fill="#166534">web3</text>
+  <text class="m" x="672" y="320" font-size="13" fill="#4b5563">localhost:8083</text>
+  <rect x="620" y="332" width="280" height="22" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text class="s" x="630" y="348" font-size="12.5" fill="#166534">capa de escritura: vacía</text>
+  <rect x="620" y="358" width="280" height="16" rx="4" fill="#dbeafe" stroke="#93c5fd"/>
+  <text class="s" x="630" y="370" font-size="11" fill="#1e40af">capas de nginx:alpine (compartidas)</text>
+
+  <!-- ===== Pie ===== -->
+  <g class="s" font-size="13.5" fill="#374151">
+    <text x="40" y="420">Las capas de la imagen se <tspan font-weight="700">comparten</tspan>: no se copian para cada contenedor.</text>
+    <text x="40" y="442">Cada contenedor solo añade <tspan font-weight="700">su propia capa de escritura</tspan>. Si borras el contenedor, esa capa se pierde.</text>
+  </g>
+</svg>

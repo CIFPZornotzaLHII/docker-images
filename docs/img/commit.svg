@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="450" viewBox="0 0 960 450">
+  <title>docker commit: una foto del contenedor</title>
+  <style>
+    .s { font-family: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif; }
+    .m { font-family: Consolas, ui-monospace, Menlo, monospace; }
+  </style>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="959" height="449" rx="16" fill="#ffffff" stroke="#e5e7eb"/>
+  <text class="s" x="28" y="44" font-size="22" font-weight="700" fill="#111827">docker commit: una «foto» del contenedor</text>
+
+  <!-- ===== Contenedor ===== -->
+  <rect x="40" y="76" width="330" height="250" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text class="s" x="60" y="104" font-size="16" font-weight="700" fill="#166534">Contenedor <tspan class="m" font-size="15">taller</tspan></text>
+  <text class="s" x="60" y="124" font-size="12.5" fill="#6b7280">dentro has instalado figlet a mano</text>
+  <rect x="60" y="142" width="290" height="70" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text class="s" x="76" y="168" font-size="14" font-weight="700" fill="#166534">Capa de escritura</text>
+  <text class="m" x="76" y="192" font-size="12.5" fill="#111827">+ /usr/bin/figlet y sus ficheros</text>
+  <rect x="60" y="224" width="290" height="40" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/>
+  <text class="s" x="76" y="249" font-size="13.5" fill="#1e3a8a"><tspan class="m">alpine:3.23</tspan> (solo lectura)</text>
+  <text class="s" x="60" y="300" font-size="12.5" fill="#6b7280">Si borras el contenedor, figlet desaparece.</text>
+
+  <!-- ===== Flecha commit ===== -->
+  <line x1="372" y1="192" x2="588" y2="192" stroke="#4b5563" stroke-width="2" marker-end="url(#flecha)"/>
+  <text class="m" x="480" y="180" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">docker commit</text>
+  <text class="m" x="480" y="212" text-anchor="middle" font-size="12.5" fill="#4b5563">taller figlet:manual</text>
+
+  <!-- ===== Imagen nueva ===== -->
+  <rect x="590" y="76" width="330" height="250" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text class="s" x="610" y="104" font-size="16" font-weight="700" fill="#1e40af">Imagen <tspan class="m" font-size="15">figlet:manual</tspan></text>
+  <text class="s" x="610" y="124" font-size="12.5" fill="#6b7280">ya no depende del contenedor</text>
+  <rect x="610" y="142" width="290" height="70" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="s" x="626" y="168" font-size="14" font-weight="700" fill="#1e40af">Capa nueva (congelada)</text>
+  <text class="m" x="626" y="192" font-size="12.5" fill="#111827">+ /usr/bin/figlet y sus ficheros</text>
+  <rect x="610" y="224" width="290" height="40" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/>
+  <text class="m" x="626" y="249" font-size="13.5" fill="#1e3a8a">alpine:3.23</text>
+  <text class="s" x="610" y="300" font-size="12.5" fill="#6b7280">Cada contenedor nuevo ya trae figlet instalado.</text>
+
+  <!-- ===== El problema ===== -->
+  <rect x="40" y="346" width="880" height="78" rx="12" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+  <text class="s" x="60" y="374" font-size="14" fill="#111827"><tspan font-weight="700">El problema:</tspan> la imagen no guarda <tspan font-style="italic">qué</tspan> hiciste dentro. Con un <tspan font-weight="700" fill="#9a3412">Dockerfile</tspan> lo dejas escrito (Parte 3):</text>
+  <text class="m" x="60" y="404" font-size="13.5" fill="#9a3412" xml:space="preserve">FROM alpine:3.23      RUN apk add --no-cache figlet</text>
+</svg>

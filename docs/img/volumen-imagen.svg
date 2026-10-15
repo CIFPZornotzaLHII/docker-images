@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="410" viewBox="0 0 960 410">
+  <title>Volumen o imagen: ¿cuándo se ven tus cambios?</title>
+  <style>
+    .s { font-family: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif; }
+    .m { font-family: Consolas, ui-monospace, Menlo, monospace; }
+  </style>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="959" height="409" rx="16" fill="#ffffff" stroke="#e5e7eb"/>
+  <text class="s" x="28" y="44" font-size="22" font-weight="700" fill="#111827">Volumen o imagen: ¿cuándo se ven tus cambios?</text>
+
+  <!-- ===== Fila 1: volumen ===== -->
+  <text class="s" x="40" y="94" font-size="15" font-weight="700" fill="#111827">1 · Con volumen <tspan class="m" font-weight="400" fill="#4b5563">(-v)</tspan></text>
+
+  <rect x="40" y="108" width="200" height="72" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+  <text class="s" x="56" y="136" font-size="15" font-weight="700" fill="#111827">Tu PC</text>
+  <text class="m" x="56" y="160" font-size="12" fill="#4b5563">mi-web/web/index.html</text>
+
+  <line x1="244" y1="144" x2="566" y2="144" stroke="#4b5563" stroke-width="2" stroke-dasharray="6 4" marker-start="url(#flecha)" marker-end="url(#flecha)"/>
+  <text class="m" x="405" y="132" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">-v ./mi-web/web:/usr/share/nginx/html</text>
+  <text class="s" x="405" y="166" text-anchor="middle" font-size="12.5" fill="#6b7280">conexión en vivo: es la misma carpeta</text>
+
+  <rect x="570" y="108" width="190" height="72" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text class="m" x="586" y="136" font-size="15" font-weight="700" fill="#166534">web-vol</text>
+  <text class="m" x="586" y="160" font-size="12" fill="#4b5563">localhost:8084</text>
+
+  <rect x="790" y="108" width="140" height="72" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text class="s" x="860" y="134" text-anchor="middle" font-size="12" fill="#6b7280">¿Ves el cambio?</text>
+  <text class="s" x="860" y="160" text-anchor="middle" font-size="15" font-weight="700" fill="#15803d">Al instante</text>
+
+  <!-- ===== Fila 2: imagen ===== -->
+  <text class="s" x="40" y="226" font-size="15" font-weight="700" fill="#111827">2 · Con imagen <tspan class="m" font-weight="400" fill="#4b5563">(COPY en el Dockerfile)</tspan></text>
+
+  <rect x="40" y="240" width="200" height="72" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+  <text class="s" x="56" y="268" font-size="15" font-weight="700" fill="#111827">Tu PC</text>
+  <text class="m" x="56" y="292" font-size="12" fill="#4b5563">mi-web/web/index.html</text>
+
+  <line x1="244" y1="276" x2="326" y2="276" stroke="#4b5563" stroke-width="2" marker-end="url(#flecha)"/>
+  <text class="m" x="285" y="266" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">docker build</text>
+  <text class="s" x="285" y="294" text-anchor="middle" font-size="12" fill="#6b7280">copia</text>
+
+  <rect x="330" y="240" width="160" height="72" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text class="m" x="346" y="268" font-size="14" font-weight="700" fill="#1e40af">mi-web:1.0</text>
+  <text class="s" x="346" y="292" font-size="12" fill="#6b7280">guarda una copia</text>
+
+  <line x1="494" y1="276" x2="566" y2="276" stroke="#4b5563" stroke-width="2" marker-end="url(#flecha)"/>
+  <text class="m" x="530" y="266" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">docker run</text>
+
+  <rect x="570" y="240" width="190" height="72" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text class="m" x="586" y="268" font-size="15" font-weight="700" fill="#166534">web-img</text>
+  <text class="m" x="586" y="292" font-size="12" fill="#4b5563">localhost:8090</text>
+
+  <rect x="790" y="240" width="140" height="72" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text class="s" x="860" y="266" text-anchor="middle" font-size="12" fill="#6b7280">¿Ves el cambio?</text>
+  <text class="s" x="860" y="292" text-anchor="middle" font-size="15" font-weight="700" fill="#b91c1c">Al reconstruir</text>
+
+  <!-- ===== Pie ===== -->
+  <g class="s" font-size="13.5" fill="#374151">
+    <text x="40" y="354"><tspan font-weight="700">Volumen:</tspan> ideal mientras desarrollas. Cambias un fichero y lo ves al recargar el navegador.</text>
+    <text x="40" y="378"><tspan font-weight="700">Imagen:</tspan> ideal para entregar o desplegar. Lleva todo dentro y funciona igual en cualquier equipo.</text>
+  </g>
+</svg>

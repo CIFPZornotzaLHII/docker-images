@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440">
+  <title>De docker compose a docker run</title>
+  <style>
+    .s { font-family: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif; }
+    .m { font-family: Consolas, ui-monospace, Menlo, monospace; }
+  </style>
+
+  <rect x="0.5" y="0.5" width="959" height="439" rx="16" fill="#ffffff" stroke="#e5e7eb"/>
+  <text class="s" x="28" y="44" font-size="22" font-weight="700" fill="#111827">De docker compose a docker run</text>
+  <text class="s" x="28" y="68" font-size="13" fill="#6b7280">Las mismas opciones escritas de dos formas. El color y el número emparejan cada opción.</text>
+
+  <!-- ===== Panel izquierdo: compose ===== -->
+  <rect x="28" y="86" width="430" height="300" rx="12" fill="#f9fafb" stroke="#e5e7eb" stroke-width="2"/>
+  <text class="m" x="46" y="114" font-size="14" font-weight="700" fill="#111827">docker-compose.yml</text>
+  <line x1="44" y1="126" x2="442" y2="126" stroke="#e5e7eb"/>
+
+  <rect x="38" y="183" width="410" height="22" rx="5" fill="#dbeafe"/>
+  <rect x="38" y="207" width="410" height="22" rx="5" fill="#ede9fe"/>
+  <rect x="38" y="231" width="410" height="46" rx="5" fill="#ffedd5"/>
+  <rect x="38" y="279" width="410" height="46" rx="5" fill="#ccfbf1"/>
+  <rect x="38" y="327" width="410" height="46" rx="5" fill="#fce7f3"/>
+
+  <g class="m" font-size="14" fill="#111827">
+    <text x="46" y="152">services:</text>
+    <text x="61" y="176">web1:</text>
+    <text x="77" y="200">image: nginx:alpine</text>
+    <text x="77" y="224">container_name: web1</text>
+    <text x="77" y="248">ports:</text>
+    <text x="92" y="272">- "8081:80"</text>
+    <text x="77" y="296">environment:</text>
+    <text x="92" y="320">- TZ=Europe/Madrid</text>
+    <text x="77" y="344">volumes:</text>
+    <text x="92" y="368">- ./web:/usr/share/nginx/html</text>
+  </g>
+
+  <!-- ===== Panel derecho: docker run ===== -->
+  <rect x="502" y="86" width="430" height="300" rx="12" fill="#f9fafb" stroke="#e5e7eb" stroke-width="2"/>
+  <text class="s" x="520" y="114" font-size="14" font-weight="700" fill="#111827">Terminal</text>
+  <text class="s" x="588" y="114" font-size="12.5" fill="#6b7280">(se escribe todo en una sola línea)</text>
+  <line x1="518" y1="126" x2="916" y2="126" stroke="#e5e7eb"/>
+
+  <rect x="512" y="159" width="410" height="22" rx="5" fill="#ede9fe"/>
+  <rect x="512" y="183" width="410" height="22" rx="5" fill="#ffedd5"/>
+  <rect x="512" y="207" width="410" height="22" rx="5" fill="#ccfbf1"/>
+  <rect x="512" y="231" width="410" height="22" rx="5" fill="#fce7f3"/>
+  <rect x="512" y="255" width="410" height="22" rx="5" fill="#dbeafe"/>
+
+  <g class="m" font-size="14" fill="#111827">
+    <text x="520" y="152">docker run -d</text>
+    <text x="535" y="176">--name web1</text>
+    <text x="535" y="200">-p 8081:80</text>
+    <text x="535" y="224">-e TZ=Europe/Madrid</text>
+    <text x="535" y="248">-v ./web:/usr/share/nginx/html</text>
+    <text x="535" y="272">nginx:alpine</text>
+  </g>
+  <g class="s" font-size="13" fill="#374151">
+    <text x="520" y="314">• La imagen va siempre <tspan font-weight="700">al final</tspan>.</text>
+    <text x="520" y="336">• <tspan class="m">-d</tspan> = en segundo plano (como <tspan class="m">docker compose up -d</tspan>).</text>
+    <text x="520" y="358">• Sin <tspan class="m">--name</tspan>, Docker se inventa un nombre.</text>
+  </g>
+
+  <!-- ===== Números ===== -->
+  <g class="s" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">
+    <circle cx="432" cy="194" r="10" fill="#2563eb"/><text x="432" y="198">1</text>
+    <circle cx="432" cy="218" r="10" fill="#7c3aed"/><text x="432" y="222">2</text>
+    <circle cx="432" cy="254" r="10" fill="#ea580c"/><text x="432" y="258">3</text>
+    <circle cx="432" cy="302" r="10" fill="#0d9488"/><text x="432" y="306">4</text>
+    <circle cx="432" cy="350" r="10" fill="#db2777"/><text x="432" y="354">5</text>
+
+    <circle cx="906" cy="170" r="10" fill="#7c3aed"/><text x="906" y="174">2</text>
+    <circle cx="906" cy="194" r="10" fill="#ea580c"/><text x="906" y="198">3</text>
+    <circle cx="906" cy="218" r="10" fill="#0d9488"/><text x="906" y="222">4</text>
+    <circle cx="906" cy="242" r="10" fill="#db2777"/><text x="906" y="246">5</text>
+    <circle cx="906" cy="266" r="10" fill="#2563eb"/><text x="906" y="270">1</text>
+  </g>
+
+  <text class="s" x="28" y="418" font-size="13.5" fill="#374151">Compose lee las opciones de un fichero; <tspan class="m">docker run</tspan> las recibe en la terminal. El contenedor que se crea es el mismo.</text>
+</svg>
