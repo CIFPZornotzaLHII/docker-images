@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="410" viewBox="0 0 960 410">
-  <title>Volumen o imagen: ¿cuándo se ven tus cambios?</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" xmlns:c2pa="http://c2pa.org/manifest">
+  <title>Volumen o imagen: ¿qué ve cada contenedor?</title>
   <style>
     .s { font-family: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif; }
     .m { font-family: Consolas, ui-monospace, Menlo, monospace; }
@@ -10,57 +10,55 @@
     </marker>
   </defs>
 
-  <rect x="0.5" y="0.5" width="959" height="409" rx="16" fill="#ffffff" stroke="#e5e7eb"/>
-  <text class="s" x="28" y="44" font-size="22" font-weight="700" fill="#111827">Volumen o imagen: ¿cuándo se ven tus cambios?</text>
+  <rect x="0.5" y="0.5" width="959" height="439" rx="16" fill="#ffffff" stroke="#e5e7eb"/>
+  <text class="s" x="28" y="44" font-size="22" font-weight="700" fill="#111827">Acabas de cambiar index.html a la versión 2.0. ¿Qué ve cada contenedor?</text>
 
   <!-- ===== Fila 1: volumen ===== -->
-  <text class="s" x="40" y="94" font-size="15" font-weight="700" fill="#111827">1 · Con volumen <tspan class="m" font-weight="400" fill="#4b5563">(-v)</tspan></text>
+  <text class="s" x="40" y="94" font-size="16" font-weight="700" fill="#111827">Volumen = una ventana <tspan class="m" font-size="13" font-weight="400" fill="#4b5563">(-v)</tspan></text>
 
-  <rect x="40" y="108" width="200" height="72" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
-  <text class="s" x="56" y="136" font-size="15" font-weight="700" fill="#111827">Tu PC</text>
-  <text class="m" x="56" y="160" font-size="12" fill="#4b5563">mi-web/web/index.html</text>
+  <rect x="40" y="110" width="210" height="84" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+  <text class="s" x="56" y="136" font-size="15" font-weight="700" fill="#111827">Tu carpeta</text>
+  <text class="m" x="56" y="158" font-size="12" fill="#4b5563">mi-web/web/index.html</text>
+  <text class="s" x="56" y="180" font-size="13" font-weight="700" fill="#15803d">Versión 2.0</text>
 
-  <line x1="244" y1="144" x2="566" y2="144" stroke="#4b5563" stroke-width="2" stroke-dasharray="6 4" marker-start="url(#flecha)" marker-end="url(#flecha)"/>
-  <text class="m" x="405" y="132" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">-v ./mi-web/web:/usr/share/nginx/html</text>
-  <text class="s" x="405" y="166" text-anchor="middle" font-size="12.5" fill="#6b7280">conexión en vivo: es la misma carpeta</text>
+  <line x1="254" y1="152" x2="646" y2="152" stroke="#4b5563" stroke-width="2" stroke-dasharray="6 4" marker-start="url(#flecha)"/>
+  <text class="s" x="450" y="140" text-anchor="middle" font-size="13.5" font-weight="700" fill="#111827">el contenedor mira tu carpeta</text>
+  <text class="s" x="450" y="174" text-anchor="middle" font-size="12.5" fill="#6b7280">no hay copia: son los mismos ficheros</text>
 
-  <rect x="570" y="108" width="190" height="72" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
-  <text class="m" x="586" y="136" font-size="15" font-weight="700" fill="#166534">web-vol</text>
-  <text class="m" x="586" y="160" font-size="12" fill="#4b5563">localhost:8084</text>
-
-  <rect x="790" y="108" width="140" height="72" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
-  <text class="s" x="860" y="134" text-anchor="middle" font-size="12" fill="#6b7280">¿Ves el cambio?</text>
-  <text class="s" x="860" y="160" text-anchor="middle" font-size="15" font-weight="700" fill="#15803d">Al instante</text>
+  <rect x="650" y="110" width="270" height="84" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text class="m" x="666" y="136" font-size="15" font-weight="700" fill="#166534">web-vol</text>
+  <text class="m" x="666" y="158" font-size="12" fill="#4b5563">localhost:8084</text>
+  <text class="s" x="666" y="180" font-size="13" fill="#111827">Muestra la <tspan font-weight="700" fill="#15803d">versión 2.0</tspan></text>
 
   <!-- ===== Fila 2: imagen ===== -->
-  <text class="s" x="40" y="226" font-size="15" font-weight="700" fill="#111827">2 · Con imagen <tspan class="m" font-weight="400" fill="#4b5563">(COPY en el Dockerfile)</tspan></text>
+  <text class="s" x="40" y="246" font-size="16" font-weight="700" fill="#111827">Imagen = una foto <tspan class="m" font-size="13" font-weight="400" fill="#4b5563">(COPY en el Dockerfile)</tspan></text>
 
-  <rect x="40" y="240" width="200" height="72" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
-  <text class="s" x="56" y="268" font-size="15" font-weight="700" fill="#111827">Tu PC</text>
-  <text class="m" x="56" y="292" font-size="12" fill="#4b5563">mi-web/web/index.html</text>
+  <rect x="40" y="262" width="210" height="84" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+  <text class="s" x="56" y="288" font-size="15" font-weight="700" fill="#111827">Tu carpeta</text>
+  <text class="m" x="56" y="310" font-size="12" fill="#4b5563">mi-web/web/index.html</text>
+  <text class="s" x="56" y="332" font-size="13" font-weight="700" fill="#15803d">Versión 2.0</text>
 
-  <line x1="244" y1="276" x2="326" y2="276" stroke="#4b5563" stroke-width="2" marker-end="url(#flecha)"/>
-  <text class="m" x="285" y="266" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">docker build</text>
-  <text class="s" x="285" y="294" text-anchor="middle" font-size="12" fill="#6b7280">copia</text>
+  <line x1="254" y1="304" x2="366" y2="304" stroke="#4b5563" stroke-width="2" marker-end="url(#flecha)"/>
+  <text class="m" x="310" y="292" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">docker build</text>
+  <text class="s" x="310" y="324" text-anchor="middle" font-size="12" fill="#6b7280">lo hiciste antes</text>
+  <text class="s" x="310" y="340" text-anchor="middle" font-size="12" fill="#6b7280">del cambio</text>
 
-  <rect x="330" y="240" width="160" height="72" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-  <text class="m" x="346" y="268" font-size="14" font-weight="700" fill="#1e40af">mi-web:1.0</text>
-  <text class="s" x="346" y="292" font-size="12" fill="#6b7280">guarda una copia</text>
+  <rect x="370" y="262" width="180" height="84" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text class="m" x="386" y="288" font-size="14" font-weight="700" fill="#1e40af">mi-web:1.0</text>
+  <text class="s" x="386" y="310" font-size="12" fill="#4b5563">guarda la foto de entonces</text>
+  <text class="s" x="386" y="332" font-size="13" font-weight="700" fill="#b91c1c">Versión 1.0</text>
 
-  <line x1="494" y1="276" x2="566" y2="276" stroke="#4b5563" stroke-width="2" marker-end="url(#flecha)"/>
-  <text class="m" x="530" y="266" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">docker run</text>
+  <line x1="554" y1="304" x2="646" y2="304" stroke="#4b5563" stroke-width="2" marker-end="url(#flecha)"/>
+  <text class="m" x="600" y="292" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">docker run</text>
 
-  <rect x="570" y="240" width="190" height="72" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
-  <text class="m" x="586" y="268" font-size="15" font-weight="700" fill="#166534">web-img</text>
-  <text class="m" x="586" y="292" font-size="12" fill="#4b5563">localhost:8090</text>
-
-  <rect x="790" y="240" width="140" height="72" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
-  <text class="s" x="860" y="266" text-anchor="middle" font-size="12" fill="#6b7280">¿Ves el cambio?</text>
-  <text class="s" x="860" y="292" text-anchor="middle" font-size="15" font-weight="700" fill="#b91c1c">Al reconstruir</text>
+  <rect x="650" y="262" width="270" height="84" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text class="m" x="666" y="288" font-size="15" font-weight="700" fill="#166534">web-img</text>
+  <text class="m" x="666" y="310" font-size="12" fill="#4b5563">localhost:8090</text>
+  <text class="s" x="666" y="332" font-size="13" fill="#111827">Sigue en la <tspan font-weight="700" fill="#b91c1c">versión 1.0</tspan></text>
 
   <!-- ===== Pie ===== -->
   <g class="s" font-size="13.5" fill="#374151">
-    <text x="40" y="354"><tspan font-weight="700">Volumen:</tspan> ideal mientras desarrollas. Cambias un fichero y lo ves al recargar el navegador.</text>
-    <text x="40" y="378"><tspan font-weight="700">Imagen:</tspan> ideal para entregar o desplegar. Lleva todo dentro y funciona igual en cualquier equipo.</text>
+    <text x="40" y="388"><tspan font-weight="700">Volumen:</tspan> ves los cambios al recargar, pero solo funciona donde esté tu carpeta.</text>
+    <text x="40" y="412"><tspan font-weight="700">Imagen:</tspan> lleva la web dentro y funciona en cualquier equipo, pero hay que reconstruirla para actualizarla.</text>
   </g>
-</svg>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTozZTY2YTA4OS03NmQ2LTQyYjktYmYyYS0yNmZhMTljOWU5NjAAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaEVzonuAoo0em9jKTUICyjsAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoxZWVhOTk0Zi1kNmRiLTQwN2YtYWRkNi05MWU0OGU4MzAyNDRscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoqEL/UWq5J8JmagZxMRlDLAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggewu49wSMHevyR8YRy00RRps/Tj5aqCLY74odLL7X4GSkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaD06QJmLLSr5TgGOcsfw2gsAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIHe7T47swULMJzGECzwdCsnJIl2pUAvGwypxw3TA+7S7ZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GRMrZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjNlNjZhMDg5LTc2ZDYtNDJiOS1iZjJhLTI2ZmExOWM5ZTk2MC9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjNlNTBlZDNiLWY4NmQtNGU0OC1hMTMxLWFmZjNhOTYyMmViYnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCB7C7j3BIwd6/JHxhHLTRFGmz9OPlqoItjvih0svtfgZKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggIHViOUN4NhU/5HzF3LovZ7i6+fjU9gp+HYckpwpyu5yiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg1AK8yIcU5Hglop0oThTnxON48evOeNk0coA635BH2Rl0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQJHlZuP8cbePbC/DwJc3KGPtDF9u8EOlJGBSR0HgWceZrv4ZqrOWDUoLrLWpNxISzUosv8mqhG+2jpl4X/XyA2A=</c2pa:manifest></metadata></svg>
